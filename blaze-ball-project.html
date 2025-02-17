@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blaze Ball - Unity Game - Zohib's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      margin: auto;
+      text-align: center;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .close {
+      position: fixed;
+      top: 25px;
+      right: 35px;
+      color: white;
+      font-size: 45px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      transition: opacity 0.2s ease;
+    }
+
+    .close:hover {
+      opacity: 0.8;
+    }
+
+    /* Media item hover effects */
+    .media-item img {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .media-item:hover img {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-left">
+      <h1>Zohib.</h1>
+    </div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="project-details-page">
+    <h2>Blaze Ball</h2>
+
+    <!-- Project Media -->
+    <div class="project-media">
+      <!-- Image 1 -->
+      <div class="media-item">
+        <img src="images/blaze-ball-image1.jpg" alt="Blaze Ball - Unity Game" onclick="openLightbox(this)">
+      </div>
+      <!-- Image 2 -->
+      <div class="media-item">
+        <img src="images/blaze-ball-image2.jpg" alt="Blaze Ball - Unity Game" onclick="openLightbox(this)">
+      </div>
+      <!-- Image 3 -->
+      <div class="media-item">
+        <img src="images/blaze-ball-image3.jpg" alt="Blaze Ball - Unity Game" onclick="openLightbox(this)">
+      </div>
+      <!-- Image 4 -->
+      <div class="media-item">
+        <img src="images/blaze-ball-image4.jpg" alt="Blaze Ball - Unity Game" onclick="openLightbox(this)">
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <span class="close">&times;</span>
+      <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Zoomed Image">
+      </div>
+    </div>
+
+    <!-- Project Details -->
+    <div class="project-details">
+      <h3>Project Details</h3>
+      <p>
+        <strong>Tools Used:</strong> Unity (Game Development), C# (Programming), GitKraken (Version Control for Group Collaboration)
+      </p>
+      <p>
+        <strong>Duration:</strong> 2 months (full-time)
+      </p>
+      <p>
+        <strong>Restrictions:</strong> Limited time for multiplayer networking, which required optimising the game for smooth online gameplay.
+      </p>
+      <p>
+        <strong>Description:</strong> Blaze Ball is a local multiplayer football game created collaboratively by me and two other team members using Unity, C#, and GitKraken for version control. Each of us contributed to different parts of the game, and my contributions were focused on both game mechanics and user interface design. The game is designed for 4 players and is set on a small pitch surrounded by trees, stones, and small hills. One unique feature is that there are invisible walls around the pitch, so the ball cannot go out of play like it would in real football. These invisible walls can be an advantage or disadvantage, depending on whether a team is attacking or defending.
+      </p>
+      <p>
+        My tasks included developing the following scripts:
+      </p>
+      <p>
+        PlayerPickUp script – Handling player interactions with the ball.
+      </p>
+      <p>
+        MainMenu script – Creating the main menu interface and functionality.
+      </p>
+      <p>
+        GameTimer script – Managing the game's time system.
+      </p>
+      <p>
+        GameOverScreen script – Displaying the game over screen when the game finishes.
+      </p>
+      <p>
+        PauseMenu script – Allowing players to pause and resume the game.
+      </p>
+      <p>
+        Additionally, I worked on designing the fonts, buttons, and overall look for all the menus to ensure a user-friendly and visually appealing experience.
+      </p>
+    </div>
+
+    <!-- Back Button -->
+    <a href="portfolio.html" class="view-project-button">Back to Portfolio</a>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Zohib Sala. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Lightbox -->
+  <script>
+    function openLightbox(imgElement) {
+      document.getElementById('lightbox').style.display = 'flex';
+      document.getElementById('lightbox-img').src = imgElement.src;
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

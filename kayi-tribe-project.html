@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kayi Tribe 3D Model - Zohib's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      margin: auto;
+      text-align: center;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .close {
+      position: fixed;
+      top: 25px;
+      right: 35px;
+      color: white;
+      font-size: 45px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      transition: opacity 0.2s ease;
+    }
+
+    .close:hover {
+      opacity: 0.8;
+    }
+
+    /* Media item hover effects */
+    .media-item img {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .media-item:hover img {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-left">
+      <h1>Zohib.</h1>
+    </div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="project-details-page">
+    <h2>Kayi Tribe</h2>
+
+    <!-- Project Media -->
+    <div class="project-media">
+      <!-- Image 1 -->
+      <div class="media-item">
+        <img src="images/kayi-tribe-image1.jpg" alt="Kayi Tribe 3D Model">
+      </div>
+      <!-- Image 2 -->
+      <div class="media-item">
+        <img src="images/kayi-tribe-image2.jpg" alt="Kayi Tribe 3D Model">
+      </div>
+      <!-- Image 3 -->
+      <div class="media-item">
+        <img src="images/kayi-tribe-image3.jpg" alt="Kayi Tribe 3D Model">
+      </div>
+      <!-- Image 4 -->
+      <div class="media-item">
+        <img src="images/kayi-tribe-image4.jpg" alt="Kayi Tribe 3D Model">
+      </div>
+    </div>
+
+    <!-- Project Details -->
+    <div class="project-details">
+      <h3>Project Details</h3>
+      <p>
+        <strong>Tools Used:</strong> Autodesk Maya (3D Modelling), Unity (Materials & Textures), Photoshop (Texture Design)
+      </p>
+      <p>
+        <strong>Duration:</strong> 3 months (full-time)
+      </p>
+      <p>
+        <strong>Restrictions:</strong> Limited time and access to historical references, which required extensive research to ensure accuracy.
+      </p>
+      <p>
+        <strong>Description:</strong> The Kayi Tribe 3D model was my first project using Autodesk Maya. It was the first time I worked on 3D modelling and creating an environment. This project was part of my university coursework, where I had to make 3D models of small objects and a historical environment.
+
+I decided to create the environment of the Kayi Tribe, the tribe of Osman I, who founded the Ottoman Empire. My idea was inspired by the Turkish TV shows Diriliş: Ertuğrul and Kuruluş: Osman. These shows tell the story of Osman’s father, Ertuğrul, and how he helped build the foundation for the Ottoman Empire. This empire ruled large parts of the Middle East, Eastern Europe, and North Africa for over 600 years.
+
+Through this project, I got the chance to show my passion for Turkish history and culture. This project helped me learn important 3D modelling skills while also letting me explore something I’m really interested in—history.
+      </p>
+    </div>
+
+    <!-- Back Button -->
+    <a href="portfolio.html" class="view-project-button">Back to Portfolio</a>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Zohib Sala. All rights reserved.</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <div class="lightbox-content"></div>
+  </div>
+
+  <script>
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.querySelector('.lightbox-content');
+    const closeBtn = document.querySelector('.close');
+    const zoomableMedia = document.querySelectorAll('.media-item img');
+
+    function openLightbox(media) {
+      lightbox.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      lightboxContent.innerHTML = `<img src="${media.src}" alt="${media.alt}" style="max-width: 90vw; max-height: 90vh;">`;
+    }
+
+    zoomableMedia.forEach(media => {
+      media.addEventListener('click', () => openLightbox(media));
+    });
+
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  </script>
+</body>
+</html>
